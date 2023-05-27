@@ -11,8 +11,8 @@ export default function Lead({ data }: LeadProps) {
             WHY WE MATCHED YOU
           </h1>
           <ul className="">
-            {data?.matchDetails?.map((line: string) => (
-              <span className="flex items-center gap-1">
+            {data?.matchDetails?.map((line: string, idx: number) => (
+              <span key={idx} className="flex items-center gap-1">
                 • <li className="text-sm text-gray-800">{line}</li>
               </span>
             ))}
