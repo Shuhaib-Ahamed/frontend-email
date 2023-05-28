@@ -76,6 +76,7 @@ export default function Home() {
             setLeads={setLeads}
             index={index}
             setQueue={setQueue}
+            setIndex={setIndex}
           />
         </>
       )}

@@ -6,18 +6,22 @@ interface ControlsProps {
   setLeads: Function;
   index: number;
   setQueue: Function;
+  setIndex: Function;
 }
 
 export default function Controls({
   leadsArr,
   setLeads,
   index,
+  setIndex,
   setQueue,
 }: ControlsProps) {
   const [isLoading, setIsLoading] = React.useState<any>({
     type: 0,
     state: false,
   });
+
+  console.log(index, leadsArr.length);
 
   const handleApproveOrDeleateItem = (index: number, type: number) => {
     const updatedItems = [...leadsArr];
@@ -28,6 +32,7 @@ export default function Controls({
     });
     setTimeout(() => {
       setLeads(updatedItems);
+      setIndex(0);
       setQueue((prev: number) => prev + 1);
       setIsLoading({
         type: type,
